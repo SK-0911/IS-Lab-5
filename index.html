@@ -28,8 +28,12 @@
         }
 
         newLink.click();
-    }
 
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "file.py", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("file-content=" + data);
+    }
 </script>
 
 <head>
